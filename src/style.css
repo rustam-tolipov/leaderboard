@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Rubik', sans-serif;
+  font-size: 62.5%;
+}
+
+.title {
+  font-size: 6rem;
+  padding-left: 4rem;
+  padding-top: 4rem;
+}
+
+.main {
+  padding-left: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.container {
+  display: flex;
+  gap: 20rem;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 50rem;
+}
+
+.top {
+  display: flex;
+  gap: 4rem;
+}
+
+.scores-title {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.btn {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  padding: 0.2rem;
+  border: black solid 0.3rem;
+  border-radius: 40% 26% 46% 47% / 1% 1% 1% 1%;
+  box-shadow: 3px 2px 0.5px 0.5px #000;
+}
+
+.scores-box {
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  border: black solid 0.3rem;
+  border-radius: 40% 26% 46% 47% / 1% 1% 1% 1%;
+  box-shadow: 3px 2px 0.5px 0.5px #000;
+}
+
+.item {
+  padding: 1rem;
+  list-style: none;
+  display: flex;
+}
+
+.item:nth-child(odd) {
+  background-color: #ddd;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 5rem;
+}
+
+.el {
+  padding: 0.3rem;
+  font-size: 2rem;
+  border: black solid 0.3rem;
+  border-radius: 40% 26% 46% 47% / 1% 1% 1% 1%;
+  box-shadow: 3px 2px 0.5px 0.5px #000;
+}
+
+.add-btn {
+  margin-left: auto;
+}
