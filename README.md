@@ -2,6 +2,8 @@
 
 # Leaderboard
 
+<img width="1422" alt="Screen Shot 2021-09-07 at 6 37 58 PM" src="https://user-images.githubusercontent.com/69011963/132357751-b6b85fa7-fa1d-441f-873f-4014d56f2080.png">
+
 Additional description about the project and its features.
 
 ## Built With
