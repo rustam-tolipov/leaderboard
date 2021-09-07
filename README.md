@@ -23,7 +23,6 @@ To get a local copy up and running follow these simple example steps.
 - JavaScript
 - Git
 - GitHub
-- Node Js
 
 ## Live Demo
 
