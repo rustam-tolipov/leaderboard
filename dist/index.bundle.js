@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"* {\\n  margin: 0;\\n  padding: 0;\\n  box-sizing: border-box;\\n}\\n\\nhtml {\\n  font-size: 62.5%;\\n  font-family: 'Montserrat', sans-serif;\\n}\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpack-demo/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"* {\\n  margin: 0;\\n  padding: 0;\\n  box-sizing: border-box;\\n}\\n\\nhtml {\\n  font-family: 'Rubik', sans-serif;\\n  font-size: 62.5%;\\n}\\n\\n.title {\\n  font-size: 6rem;\\n  padding-left: 4rem;\\n  padding-top: 4rem;\\n}\\n\\n.main {\\n  padding-left: 4rem;\\n  display: flex;\\n  align-items: center;\\n  justify-content: center;\\n  height: 80vh;\\n}\\n\\n.container {\\n  display: flex;\\n  gap: 20rem;\\n}\\n\\n.scores {\\n  display: flex;\\n  flex-direction: column;\\n  gap: 4rem;\\n  width: 50rem;\\n}\\n\\n.top {\\n  display: flex;\\n  gap: 4rem;\\n}\\n\\n.scores-title {\\n  font-size: 4rem;\\n  font-weight: 500;\\n}\\n\\n.btn {\\n  font-size: 2rem;\\n  margin-top: 1rem;\\n  margin-left: auto;\\n  padding: 0.2rem;\\n  border: black solid 0.3rem;\\n  border-radius: 40% 26% 46% 47% / 1% 1% 1% 1%;\\n  box-shadow: 3px 2px 0.5px 0.5px #000;\\n}\\n\\n.scores-box {\\n  font-size: 2.5rem;\\n  display: flex;\\n  flex-direction: column;\\n  border: black solid 0.3rem;\\n  border-radius: 40% 26% 46% 47% / 1% 1% 1% 1%;\\n  box-shadow: 3px 2px 0.5px 0.5px #000;\\n}\\n\\n.item {\\n  padding: 1rem;\\n  list-style: none;\\n  display: flex;\\n}\\n\\n.item:nth-child(odd) {\\n  background-color: #ddd;\\n}\\n\\n.add-form {\\n  display: flex;\\n  flex-direction: column;\\n  gap: 2rem;\\n  padding-top: 5rem;\\n}\\n\\n.el {\\n  padding: 0.3rem;\\n  font-size: 2rem;\\n  border: black solid 0.3rem;\\n  border-radius: 40% 26% 46% 47% / 1% 1% 1% 1%;\\n  box-shadow: 3px 2px 0.5px 0.5px #000;\\n}\\n\\n.add-btn {\\n  margin-left: auto;\\n}\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpack-demo/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -100,13 +100,23 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, style) {\
 
 /***/ }),
 
+/***/ "./src/displayList.js":
+/*!****************************!*\
+  !*** ./src/displayList.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst scoreBox = document.getElementById('scores-box');\n\nconst displayList = (list) => {\n  list.forEach((each) => {\n    const eachItem = document.createElement('li');\n    eachItem.className = 'item';\n\n    const name = document.createElement('p');\n    name.className = 'name';\n    name.textContent = `${each.name}`;\n    eachItem.appendChild(name);\n\n    const score = document.createElement('p');\n    score.className = 'score';\n    score.textContent = `: ${each.score}`;\n    eachItem.appendChild(score);\n    scoreBox.appendChild(eachItem);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (displayList);\n\n\n//# sourceURL=webpack://webpack-demo/./src/displayList.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n// checkForm();\n\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _displayList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./displayList */ \"./src/displayList.js\");\n\n\n\nconst scores = [\n  {\n    name: 'Muhammad',\n    score: 100,\n  },\n  {\n    name: 'John',\n    score: 98,\n  },\n  {\n    name: 'Ali',\n    score: 69,\n  },\n  {\n    name: 'Sonia',\n    score: 55,\n  },\n  {\n    name: 'Alex',\n    score: 54,\n  },\n];\n\nconst displayParticipant = (scores, show) => {\n  show(scores);\n};\n\nwindow.onload = () => {\n  displayParticipant(scores, _displayList__WEBPACK_IMPORTED_MODULE_1__.default);\n};\n\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
 
 /***/ })
 
