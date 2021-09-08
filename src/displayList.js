@@ -1,22 +1,22 @@
-import './style.css';
-
 const scoreBox = document.getElementById('scores-box');
 
 const displayList = (list) => {
+  scoreBox.innerHTML = '';
   list.forEach((each) => {
-    const eachItem = document.createElement('li');
-    eachItem.className = 'item';
+    const eachCandidate = document.createElement('li');
+    eachCandidate.className = 'candidate';
 
     const name = document.createElement('p');
     name.className = 'name';
-    name.textContent = `${each.name}`;
-    eachItem.appendChild(name);
+    name.textContent = each.user;
+    eachCandidate.appendChild(name);
 
     const score = document.createElement('p');
     score.className = 'score';
-    score.textContent = `: ${each.score}`;
-    eachItem.appendChild(score);
-    scoreBox.appendChild(eachItem);
+    score.textContent = each.score;
+    eachCandidate.appendChild(score);
+
+    scoreBox.appendChild(eachCandidate);
   });
 };
 
