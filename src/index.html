@@ -7,9 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://kit.fontawesome.com/f654a6a150.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <h1 class="title">Leaderboard</h1>
@@ -17,18 +14,20 @@
       <div class="container">
         <div class="scores">
           <div class="top">
-            <h2 class="scores-title">Recent scores</h2>
-            <button type="button" class="refresh-btn btn">Refresh</button>
+            <h2 class="scores-title">Recent Scores</h2>
+            <button type="button" class="refresh-btn btn" id="refresh">Refresh</button>
           </div>
-          <ul id="scores-box" class="scores-box"></ul>
+          <ul class="scores-box" id="scoreboard"></ul>
         </div>
-        <div class="add-scores">
-          <h2 class="scores-title">Add your score</h2>
-          <form action="add-score" class="add-form">
-            <input class="el" type="text" name="name" id="name" placeholder="Your name" />
-            <input class="el" type="text" name="score" id="score" placeholder="Your score" />
-            <button type="submit" class="add-btn btn">Submit</button>
+
+        <div class="add-scores" id="error-parent">
+          <h2 class="scores-title">Add Your Scores</h2>
+          <form class="add-form">
+            <input type="text" class="el" placeholder="Your Name" id="name" required />
+            <input type="number" class="el" placeholder="Your Score" id="score" required />
+            <button type="submit" class="add-btn btn" id="submit">Submit</button>
           </form>
+          <p class="error-msg">Please insert your name and score</p>
         </div>
       </div>
     </div>

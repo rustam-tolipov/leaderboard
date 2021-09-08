@@ -16,7 +16,6 @@ html {
 }
 
 .main {
-  padding-left: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,16 +63,6 @@ html {
   box-shadow: 3px 2px 0.5px 0.5px #000;
 }
 
-.item {
-  padding: 1rem;
-  list-style: none;
-  display: flex;
-}
-
-.item:nth-child(odd) {
-  background-color: #ddd;
-}
-
 .add-form {
   display: flex;
   flex-direction: column;
@@ -91,4 +80,24 @@ html {
 
 .add-btn {
   margin-left: auto;
+}
+
+.candidate {
+  padding: 1rem;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.candidate:nth-child(odd) {
+  background-color: #ddd;
+}
+
+.error-msg {
+  padding: 2rem;
+  display: none;
+  text-align: center;
+  color: red;
+  font-size: 2rem;
+  font-weight: 400;
 }
