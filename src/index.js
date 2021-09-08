@@ -26,6 +26,19 @@ refresh.addEventListener('click', async (e) => {
   const candidates = result.result;
   const obj = candidates.pop();
   list.push(obj);
+
+  function sortCandidates(a, b) {
+    if (a.score > b.score) {
+      return -1;
+    }
+    if (a.score < b.score) {
+      return 1;
+    }
+    return 0;
+  }
+
+  list.sort(sortCandidates);
+
   displayList(list);
 });
 
