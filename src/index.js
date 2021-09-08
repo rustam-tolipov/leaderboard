@@ -1,33 +1,34 @@
 import './style.css';
 import displayList from './displayList';
+import sendResult from './sendResult';
+import getResult from './getResult';
+import addCandidate from './addCandidate';
 
-const scores = [
-  {
-    name: 'Muhammad',
-    score: 100,
-  },
-  {
-    name: 'John',
-    score: 98,
-  },
-  {
-    name: 'Ali',
-    score: 69,
-  },
-  {
-    name: 'Sonia',
-    score: 55,
-  },
-  {
-    name: 'Alex',
-    score: 54,
-  },
-];
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+let link;
+const submit = document.getElementById('submit');
+const refresh = document.getElementById('refresh');
+const list = [];
 
-const displayParticipant = (scores, show) => {
-  show(scores);
-};
+submit.addEventListener('click', async (e) => {
+  e.preventDefault();
+  const player = await addCandidate(url);
+  const name = player.candidateName;
+  const score = player.candidateScore;
+  const gameLink = player.link;
+  link = gameLink;
+  await sendResult(name, score, gameLink);
+});
 
-window.onload = () => {
-  displayParticipant(scores, displayList);
+refresh.addEventListener('click', async (e) => {
+  e.preventDefault();
+  const result = await getResult(link);
+  const candidates = result.result;
+  const obj = candidates.pop();
+  list.push(obj);
+  displayList(list);
+});
+
+window.onload = async () => {
+  displayList();
 };
