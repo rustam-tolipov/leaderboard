@@ -1,15 +1,9 @@
+/* eslint-disable no-useless-concat */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable max-len */
 /* eslint-disable no-throw-literal */
 /* eslint-disable func-names */
 const VanillaTilt = (function () {
-  /**
-   * Created by Sergiu Șandor (micku7zu) on 1/27/2017.
-   * Original idea: https://github.com/gijsroge/tilt.js
-   * MIT License.
-   * Version 1.7.2
-   */
-
   class VanillaTilt {
     constructor(element, settings = {}) {
       if (!(element instanceof Node)) {
@@ -261,8 +255,8 @@ const VanillaTilt = (function () {
     }
 
     getValues() {
-      let x; let
-        y;
+      let x;
+      let y;
 
       if (this.fullPageListening) {
         x = this.event.clientX / this.clientWidth;

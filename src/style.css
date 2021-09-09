@@ -14,7 +14,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  color: #00ffdd;
+  color: #0fd;
 }
 
 .title {
@@ -51,8 +51,6 @@ body {
   font-size: 2rem;
   margin-top: 1rem;
   margin-left: auto;
-  padding: 0.2rem;
-  border: solid 0.2rem;
   border-radius: 3px;
   padding: 1rem 2rem;
   cursor: pointer;
@@ -82,7 +80,6 @@ body {
 }
 
 .el {
-  padding: 0.3rem;
   font-size: 2rem;
   border: #00ffdda4 solid 0.2rem;
   border-radius: 6px;
@@ -146,14 +143,12 @@ select {
   background-color: #00ffdd0e;
   overflow: hidden;
   position: fixed;
-  color: red;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 2.5rem;
   font-weight: 500;
   display: flex;
   align-items: center;
-  color: #fff;
 }
 
 .text-update p {
@@ -163,13 +158,14 @@ select {
   text-align: left;
   transform: translateX(50%);
   animation: moving 15s linear infinite;
-  color: #fff;
+  color: #f00;
 }
 
 @keyframes moving {
   0% {
     transform: translateX(50%);
   }
+
   100% {
     transform: translateX(-50%);
   }
