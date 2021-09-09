@@ -2,7 +2,7 @@
 
 # Leaderboard
 
-![LeaderboardAPI](https://user-images.githubusercontent.com/69011963/132566474-a586f8ca-c78e-4eb2-a10d-1681de7e4456.gif)
+![LeaderboardDesigne](https://user-images.githubusercontent.com/69011963/132689961-8a90478c-9cc0-446c-b360-27a38a8baff3.gif)
 
 Additional description about the project and its features.
 
