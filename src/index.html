@@ -6,30 +6,32 @@
     <title>Leaderboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <h1 class="title">Leaderboard</h1>
     <div class="main">
-      <div class="container">
-        <div class="scores">
-          <div class="top">
-            <h2 class="scores-title">Recent Scores</h2>
-            <button type="button" class="refresh-btn btn" id="refresh">Refresh</button>
-          </div>
-          <ul class="scores-box" id="scores-box"></ul>
+      <div class="scores">
+        <div class="top">
+          <h2 class="scores-title">Recent scores</h2>
+          <button class="refresh refresh-btn btn">Refresh</button>
         </div>
-
-        <div class="add-scores" id="error-parent">
-          <h2 class="scores-title">Add Your Scores</h2>
-          <form class="add-form">
-            <input type="text" class="el" placeholder="Your Name" id="name" required />
-            <input type="number" class="el" placeholder="Your Score" id="score" required />
-            <button type="submit" class="add-btn btn" id="submit">Submit</button>
-          </form>
-          <p class="error-msg">Please insert your name and score</p>
+        <ul class="scores-box"></ul>
+      </div>
+      <div class="add-score">
+        <h2 class="scores-title">Add your score</h2>
+        <div class="add-form">
+          <input type="text" class="name el" maxlength="20" placeholder="Your Name" />
+          <input type="number" class="score el" placeholder="Your Score" />
+          <button class="add add-btn btn">Submit</button>
+          <p class="warning">Please insert your Name and Score!</p>
         </div>
       </div>
+    </div>
+    <div class="wrapper">
+      <footer class="text-update">
+        <p>Copyright © Rustamjon Tolipov 2021</p>
+      </footer>
     </div>
   </body>
 </html>

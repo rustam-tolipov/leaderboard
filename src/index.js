@@ -1,47 +1,43 @@
 import './style.css';
-import displayList from './displayList';
-import sendResult from './sendResult';
-import getResult from './getResult';
-import addCandidate from './addCandidate';
+import saveToAPI from './sendResult';
+import getFromAPI from './getResult';
+import VanillaTilt from './vanilla-tilt';
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
-let link;
-const submit = document.getElementById('submit');
-const refresh = document.getElementById('refresh');
-const list = [];
+const scores = document.querySelector('.scores-box');
+const add = document.querySelector('.add');
+const refresh = document.querySelector('.refresh');
 
-submit.addEventListener('click', async (e) => {
-  e.preventDefault();
-  const player = await addCandidate(url);
-  const name = player.candidateName;
-  const score = player.candidateScore;
-  const gameLink = player.link;
-  link = gameLink;
-  await sendResult(name, score, gameLink);
-});
-
-refresh.addEventListener('click', async (e) => {
-  e.preventDefault();
-  const result = await getResult(link);
-  const candidates = result.result;
-  const obj = candidates.pop();
-  list.push(obj);
-
-  function sortCandidates(a, b) {
-    if (a.score > b.score) {
-      return -1;
+add.addEventListener('click', () => {
+  const name = document.querySelector('.name').value;
+  const scores = document.querySelector('.score').value;
+  const x = document.querySelector('.warning');
+  if (name === '') {
+    x.style.display = 'block';
+  } else {
+    saveToAPI(name, scores);
+    document.querySelector('.name').value = '';
+    document.querySelector('.score').value = '';
+    if (x.style.display !== 'none') {
+      x.style.display = 'none';
+    } else {
+      x.style.display = 'block';
     }
-    if (a.score < b.score) {
-      return 1;
-    }
-    return 0;
   }
-
-  list.sort(sortCandidates);
-
-  displayList(list);
 });
 
-window.onload = async () => {
-  displayList();
-};
+refresh.addEventListener('click', () => {
+  scores.innerHTML = '';
+  getFromAPI();
+});
+
+VanillaTilt.init(document.querySelector('body'), {
+  max: 1.5,
+  speed: 10000,
+});
+
+VanillaTilt.init(document.querySelector('.title'), {
+  max: 1.5,
+  speed: 10000,
+});
+
+window.onload = getFromAPI();
